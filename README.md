@@ -1,8 +1,8 @@
-# Cloudera-docker-spark2.2
+# docker-cdh-spark
 
 The version of Spark in the original Cloudera image is still 1.6.1.
 
-This image upgrade it to 2.2 by hacking methods, did not promise 100% compatible with CDH.
+This image upgrade it to 2.2 by hacking methods, so I CAN NOT promise 100% compatible with the original CDH.
 
 ## Prerequisite
 
