@@ -16,9 +16,9 @@ Others: [https://docs.docker.com/engine/installation/](https://docs.docker.com/e
 
 [https://docs.docker.com/compose/install/#install-compose](https://docs.docker.com/compose/install/#install-compose)
 
-## usage
+## Usage
 
-### docker container
+### docker
 
 `docker build -t cdh-spark:2.2 .`
 
