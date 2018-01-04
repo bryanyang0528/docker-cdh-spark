@@ -1,6 +1,7 @@
 FROM cloudera/quickstart:latest
 
 WORKDIR /workspace
+ENV SPARK_HOME=/workspace/spark
 
 ## update java and install spark
 RUN yum -y install java-1.8.0-openjdk openssh-server || true &&\
@@ -13,6 +14,10 @@ RUN yum -y install java-1.8.0-openjdk openssh-server || true &&\
     ln -s /usr/lib/spark/conf conf &&\
     ln -s /usr/lib/hadoop/etc/hadoop/core-site.xml conf/ &&\
     ln -s /usr/lib/hive/conf/hive-site.xml conf/
+
+RUN cd ${SPARK_HOME}/jars/ &&\
+    curl -O http://central.maven.org/maven2/org/apache/kafka/kafka-clients/1.0.0/kafka-clients-1.0.0.jar &&\
+    curl -O http://central.maven.org/maven2/org/apache/spark/spark-sql-kafka-0-10_2.11/2.2.0/spark-sql-kafka-0-10_2.11-2.2.0.jar
 
 ## update python
 RUN yum -y install python36u python36u-pip &&\
