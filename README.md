@@ -18,6 +18,12 @@ Others: [https://docs.docker.com/engine/installation/](https://docs.docker.com/e
 
 ## Usage
 
+### clone this repo
+
+`git clone https://github.com/bryanyang0528/docker-cdh-spark`
+
+`cd docker-cdh-spark`
+
 ### docker
 
 `docker build -t cdh-spark:2.2 .`
