@@ -4,7 +4,7 @@ WORKDIR /workspace
 ENV SPARK_HOME=/workspace/spark
 
 ## update java and install spark
-RUN yum -y install java-1.8.0-openjdk openssh-server || true &&\
+RUN yum -y install java-1.8.0-openjdk openssh-server kafka kafka-server || true &&\
     yum -y groupinstall development || true &&\
     yum -y install https://centos6.iuscommunity.org/ius-release.rpm java-1.8.0-openjdk || true &&\
     curl -O http://ftp.tc.edu.tw/pub/Apache/spark/spark-2.2.1/spark-2.2.1-bin-hadoop2.7.tgz &&\
