@@ -1,0 +1,15 @@
+version: "3"
+services:
+  cdh-spark:
+    build: .
+    image: cdh-spark:2.2
+    hostname: quickstart.cloudera
+    privileged: true
+    tty: true
+    ports:
+      - "4040:4040"
+      - "8080:8080"
+      - "8081:8081"
+      - "8088:8088"
+      - "18080:18080"
+    command: tail -f /dev/null
