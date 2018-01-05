@@ -24,7 +24,7 @@ RUN yum -y install python36u python36u-pip &&\
     yum clean all
 
 ## install python packages
-RUN pip3.6 install ipython notebook virtualenv
+RUN pip3.6 install ipython jupyter virtualenv
 
 ## ssh
 RUN ssh-keygen -q -t rsa -N '' -f ~/.ssh/id_rsa
@@ -34,3 +34,4 @@ EXPOSE 4040 8080 8081 8888 18080
 
 COPY bootstrap/docker-quickstart /etc/profile.d/zz_docker-quickstart.sh
 COPY bootstrap/spark.sh /etc/profile.d/spark.sh
+COPY bootstrap/0_pyspark.py .
