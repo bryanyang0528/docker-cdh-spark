@@ -1,0 +1,168 @@
+file:
+  /etc/profile.d/zz_docker-quickstart.sh:
+    exists: true
+    mode: "0644"
+    size: 1118
+    owner: root
+    group: root
+    filetype: file
+    contains: []
+  /etc/profile.d/spark.sh:
+    exists: true
+    mode: "0644"
+    size: 82
+    owner: root
+    group: root
+    filetype: file
+    contains: 
+      - export PYSPARK_DRIVER_PYTHON=/usr/bin/ipython
+      - export SPARK_HOME=/workspace/spark
+  /workspace/spark/bin/pyspark:
+    exists: true
+    mode: "0775"
+    size: 2989
+    filetype: file
+    contains: []
+  /workspace/spark/sbin/start-all.sh:
+    exists: true
+    mode: "0775"
+    size: 1190
+    filetype: file
+    contains: []
+package:
+  hadoop-hdfs:
+    installed: true
+    versions:
+    - 2.6.0+cdh5.7.0+1280
+  hadoop-hdfs-datanode:
+    installed: true
+    versions:
+    - 2.6.0+cdh5.7.0+1280
+  hadoop-hdfs-journalnode:
+    installed: true
+    versions:
+    - 2.6.0+cdh5.7.0+1280
+  hadoop-hdfs-namenode:
+    installed: true
+    versions:
+    - 2.6.0+cdh5.7.0+1280
+  hadoop-hdfs-secondarynamenode:
+    installed: true
+    versions:
+    - 2.6.0+cdh5.7.0+1280
+  hadoop-mapreduce-historyserver:
+    installed: true
+    versions:
+    - 2.6.0+cdh5.7.0+1280
+  hadoop-yarn-nodemanager:
+    installed: true
+    versions:
+    - 2.6.0+cdh5.7.0+1280
+  hadoop-yarn-resourcemanager:
+    installed: true
+    versions:
+    - 2.6.0+cdh5.7.0+1280
+  hive-metastore:
+    installed: true
+    versions:
+    - 1.1.0+cdh5.7.0+522
+  hive-server2:
+    installed: true
+    versions:
+    - 1.1.0+cdh5.7.0+522
+  java-1.8.0-openjdk:
+    installed: true
+    versions:
+    - 1.8.0.151
+  openssh-server:
+    installed: true
+    versions:
+    - 5.3p1
+  python36u:
+    installed: true
+    versions:
+    - 3.6.3
+  python36u-pip:
+    installed: true
+    versions:
+    - 9.0.1
+port:
+  tcp:22:
+    listening: true
+    ip:
+    - 0.0.0.0
+  tcp:3306:
+    listening: true
+    ip:
+    - 0.0.0.0
+  tcp:8088:
+    listening: true
+    ip:
+    - 0.0.0.0
+  tcp:9083:
+    listening: true
+    ip:
+    - 0.0.0.0
+  tcp6:22:
+    listening: true
+    ip:
+    - '::'
+service:
+  hadoop-hdfs-datanode:
+    enabled: true
+    running: true
+  hadoop-hdfs-journalnode:
+    enabled: true
+    running: true
+  hadoop-hdfs-namenode:
+    enabled: true
+    running: true
+  hadoop-hdfs-secondarynamenode:
+    enabled: true
+    running: true
+  hadoop-mapreduce-historyserver:
+    enabled: true
+    running: true
+  hadoop-yarn-nodemanager:
+    enabled: true
+    running: true
+  hadoop-yarn-resourcemanager:
+    enabled: true
+    running: true
+  hive-metastore:
+    enabled: true
+    running: true
+  hive-server2:
+    enabled: true
+    running: true
+  mysqld:
+    enabled: true
+    running: true
+  sshd:
+    enabled: true
+    running: true
+user:
+  sshd:
+    exists: true
+    uid: 74
+    gid: 74
+    groups:
+    - sshd
+    home: /var/empty/sshd
+    shell: /sbin/nologin
+group:
+  sshd:
+    exists: true
+    gid: 74
+command:
+  ipython --version:
+    exit-status: 0
+    stdout:
+    - 6.2.1
+    stderr: []
+    timeout: 0
+process:
+  mysqld:
+    running: true
+  sshd:
+    running: true
