@@ -6,10 +6,14 @@ services:
     hostname: quickstart.cloudera
     privileged: true
     tty: true
+    environment:
+      SPARK_HOME: /workspace/spark
+      SPARK_MASTER: spark://localhost:7077
     ports:
       - "4040:4040"
       - "8080:8080"
       - "8081:8081"
       - "8088:8088"
       - "18080:18080"
+      - "18888:18888"
     command: tail -f /dev/null
