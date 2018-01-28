@@ -17,7 +17,8 @@ RUN yum -y install java-1.8.0-openjdk openssh-server kafka kafka-server || true 
 
 RUN cd ${SPARK_HOME}/jars/ &&\
     curl -O http://central.maven.org/maven2/org/apache/kafka/kafka-clients/1.0.0/kafka-clients-1.0.0.jar &&\
-    curl -O http://central.maven.org/maven2/org/apache/spark/spark-sql-kafka-0-10_2.11/2.2.0/spark-sql-kafka-0-10_2.11-2.2.0.jar
+    curl -O http://central.maven.org/maven2/org/apache/spark/spark-sql-kafka-0-10_2.11/2.2.0/spark-sql-kafka-0-10_2.11-2.2.0.jar &&\ 
+   curl -O http://search.maven.org/remotecontent?filepath=org/apache/spark/spark-streaming-kafka-0-10-assembly_2.11/2.2.1/spark-streaming-kafka-0-10-assembly_2.11-2.2.1.jar
 
 ## update python
 RUN yum -y install python36u python36u-pip &&\
