@@ -21,11 +21,14 @@ RUN cd ${SPARK_HOME}/jars/ &&\
     curl -O http://central.maven.org/maven2/org/apache/spark/spark-streaming-kafka-0-8-assembly_2.11/2.2.0/spark-streaming-kafka-0-8-assembly_2.11-2.2.0.jar &&\
     curl -O http://central.maven.org/maven2/org/apache/spark/spark-streaming-kafka-0-8_2.11/2.2.0/spark-streaming-kafka-0-8_2.11-2.2.0.jar
 ## update python
-RUN yum -y install python36u python36u-pip &&\
-    yum clean all
+RUN curl -O https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh &&\
+    chmod +x Miniconda3-latest-Linux-x86_64.sh &&\
+    ./Miniconda3-latest-Linux-x86_64.sh -b -p ~/miniconda3 &&\
+    echo "export PATH=${HOME}/miniconda3/bin:${PATH}" >> ~/.bash_profile
+
 
 ## install python packages
-RUN pip3.6 install ipython jupyter virtualenv
+RUN ~/miniconda3/bin/conda install ipython jupyter virtualenv
 
 ## ssh
 RUN ssh-keygen -q -t rsa -N '' -f ~/.ssh/id_rsa
