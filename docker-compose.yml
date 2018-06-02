@@ -2,7 +2,7 @@ version: "3"
 services:
   cdh-spark:
     build: .
-    image: cdh-spark:2.2
+    image: docker-cdh-spark:latest
     hostname: quickstart.cloudera
     privileged: true
     tty: true
