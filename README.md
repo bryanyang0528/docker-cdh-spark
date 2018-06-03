@@ -39,5 +39,6 @@ Others: [https://docs.docker.com/engine/installation/](https://docs.docker.com/e
 `docker-compose exec cdh-spark /bin/bash`
 
 ## Colab
-!apt-get install openjdk-8-jdk-headless -qq > /dev/null
-!pip install pyspark
+* !apt-get install openjdk-8-jdk-headless -qq > /dev/null
+
+* !pip install pyspark
