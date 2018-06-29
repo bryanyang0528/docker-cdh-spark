@@ -24,21 +24,23 @@ Others: [https://docs.docker.com/engine/installation/](https://docs.docker.com/e
 
 `cd docker-cdh-spark`
 
-### docker
+### Option 1: docker
 
-`docker build -t cdh-spark:2.2 .`
+`docker build -t docker-cdh-spark:latest .`
 
-`docker run --hostname=quickstart.cloudera --privileged=true -ti --rm cdh-spark:2.2 /bin/bash`
+`docker run --hostname=quickstart.cloudera --privileged=true -ti --rm docker-cdh-spark:latest /bin/bash`
 
-### docker compose (*recommend*)
+### Option 2: docker compose (*recommend*)
 
 `docker-compose build`
 
 `docker-compose up -d`
 
-`docker-compose exec cdh-spark /bin/bash`
+`docker-compose exec docker-cdh-spark /bin/bash`
 
-## Colab
+## Colab (If you do not have docker environment.)
 * !apt-get install openjdk-8-jdk-headless -qq > /dev/null
 
 * !pip install pyspark
+
+
