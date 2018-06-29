@@ -1,6 +1,6 @@
 version: "3"
 services:
-  cdh-spark:
+  docker-cdh-spark:
     build: .
     image: bryanyang0528/docker-cdh-spark:latest
     hostname: quickstart.cloudera
