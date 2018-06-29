@@ -32,8 +32,6 @@ Others: [https://docs.docker.com/engine/installation/](https://docs.docker.com/e
 
 ### Option 2: docker compose (*recommend*)
 
-`docker-compose build`
-
 `docker-compose up -d`
 
 `docker-compose exec docker-cdh-spark /bin/bash`
