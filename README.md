@@ -36,9 +36,13 @@ Others: [https://docs.docker.com/engine/installation/](https://docs.docker.com/e
 
 `docker-compose exec docker-cdh-spark /bin/bash`
 
+### Start ipython notebook
+
+`ipython notebook --ip 0.0.0.0 --port 8080 --allow-root --NotebookApp.token=''`
+
+
 ## Colab (If you do not have docker environment.)
 * !apt-get install openjdk-8-jdk-headless -qq > /dev/null
 
 * !pip install pyspark
-
 
