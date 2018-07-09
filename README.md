@@ -28,7 +28,7 @@ Others: [https://docs.docker.com/engine/installation/](https://docs.docker.com/e
 
 `docker build -t docker-cdh-spark:latest .`
 
-`docker run --hostname=quickstart.cloudera --privileged=true -ti --rm docker-cdh-spark:latest /bin/bash`
+`docker run -p 8080:8080 --hostname=quickstart.cloudera --privileged=true -ti --rm docker-cdh-spark:latest /bin/bash`
 
 ### Option 2: docker compose (*recommend*)
 
